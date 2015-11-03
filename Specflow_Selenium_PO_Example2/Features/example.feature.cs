@@ -11,7 +11,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace Specflow_Selenium_PO_Example2
+namespace Specflow_Selenium_PO_Example2.Features
 {
     using TechTalk.SpecFlow;
     

@@ -58,17 +58,17 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="example.feature.cs">
+    <Compile Include="Features\example.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>example.feature</DependentUpon>
     </Compile>
-    <Compile Include="ExampleSteps.cs" />
+    <Compile Include="Steps\ExampleSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="example.feature">
+    <None Include="Features\example.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>example.feature.cs</LastGenOutput>
     </None>
