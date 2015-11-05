@@ -72,8 +72,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>example.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\ExampleWebFeature.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExampleWebFeature.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BasePage.cs" />
+    <Compile Include="Pages\LoginPage.cs" />
+    <Compile Include="Step Definitions\Base.cs" />
     <Compile Include="Step Definitions\ExampleSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Step Definitions\ExampleWebFeatureSteps.cs" />
+    <Compile Include="Utils\Config.cs" />
+    <Compile Include="Utils\Hooks.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -82,6 +93,10 @@
     <None Include="Features\example.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>example.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\ExampleWebFeature.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ExampleWebFeature.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config">
       <SubType>Designer</SubType>
