@@ -11,7 +11,11 @@ namespace Specflow_Selenium_PO_Example2.Pages
     {
         By usernameField = By.Id("username");
         By passwordField = By.Id("password");
-        By loginButton = By.Id("");
+        By loginFormLocator = By.Id("login");
+        By loginButton = By.CssSelector("button[class='radius']");
+        By successMessageLocator = By.CssSelector(".flash.success");
+        By failureMessageLocator = By.CssSelector(".flash.error");
+
 
         public LoginPage()  {
           
@@ -24,7 +28,16 @@ namespace Specflow_Selenium_PO_Example2.Pages
             type(password, passwordField);
         }
 
-     
+        public void submit()
+        {
+           // submit(loginFormLocator);
+            click(loginButton);
+        }
 
+        public Boolean successMessagePresent()
+        {
+            return isDisplayed(successMessageLocator);
+
+        }
     }
 }

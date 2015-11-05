@@ -31,5 +31,32 @@ namespace Specflow_Selenium_PO_Example2.Pages
             driver.Navigate().GoToUrl(Config.BaseUrl + url);
                 
         }
+
+        public void click(By locator)
+        {
+            find(locator).Click();
+        }
+
+        public String getText(By locator)
+        {
+            return find(locator).Text;
+        }
+
+        public Boolean isDisplayed(By locator)
+        {
+            try
+            {
+                return find(locator).Displayed && find(locator).Enabled;
+            }
+            catch (NoSuchElementException ex)
+            {
+                return false;
+            }
+        }
+
+        public void submit(By locator)
+        {
+            find(locator).Submit();
+        }
     }
 }

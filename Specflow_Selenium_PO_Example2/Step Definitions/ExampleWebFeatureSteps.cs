@@ -21,15 +21,13 @@ namespace Specflow_Selenium_PO_Example2.Step_Definitions
         public void WhenILogin()
         {
             // ScenarioContext.Current.Pending();
-
-            
-           
+            login.submit();            
         }
         
         [Then(@"I should be informed that login was successful")]
         public void ThenIShouldBeInformedThatLoginWasSuccessful()
         {
-            ScenarioContext.Current.Pending();
+            login.successMessagePresent();
         }
     }
 }
