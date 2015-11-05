@@ -1,6 +1,4 @@
 # Specflow_Selenium_PO_Example5
-small project
-
 Main resource used to create first tests: http://ralucasuditu-softwaretesting.blogspot.co.uk/2015/06/write-your-first-test-with-specflow-and.html?m=1
 
 1. Install Visual Studio (Enterprise 2015)
@@ -12,14 +10,15 @@ Main resource used to create first tests: http://ralucasuditu-softwaretesting.bl
 6. Use NuGet (Project > Manage NuGet packages) to install specflow (Specflow NUnit)
 7. Use NuGet to install selenuium? http://nugetmusthaves.com/Tag/selenium
 8. Use NuGet to install selenium support package 
-9. Create folder 'dependencies'.  Download chrome, IE drivers directly here rather than use NuGet packages (might be out of date?)
+9. Create folder 'dependencies'.  Download chrome, IE drivers directly here via NuGet packages (is this always the latest version?)
    Right click on the chromedriver.exe and select Properties
     Ensure the Build Action Content is selected  Copy to Output Directory Copy Always has been selected. 
 	This will ensure that chromedriver.exe is always in the folder of the running assembly so it can be used.
 
 10. As part of the NuGet installs,  you will notice that an App.config file was generated in the structure of the project. 
-    Because we chosen to use MSTest to execute out tests, we need to do a configuration in this file.
+    If we chosen to use MSTest instead of NUnit as a test runner, we need to do a configuration in this file.
 	Add line  <unitTestProvider name="MsTest.2015" />
+	For now, keep as nunit
 
 11. Tools > Extensions and Updates > Online.  Install SpecFlow extension and restart VS
 
@@ -27,10 +26,18 @@ Main resource used to create first tests: http://ralucasuditu-softwaretesting.bl
 
 13. Follow these steps: http://ralucasuditu-softwaretesting.blogspot.co.uk/2015/06/write-your-first-test-with-specflow-and.html?m=1
 
-Nuget - install Specflow.mstest 
+14. Add Hooks class - use tag @web for before and after scenarios involving webdriver
 
-
-n. Create new Project "SpecFlow Pages" (Separate out page objects from tests)
+Reporting - to be revisited:
+Add nunit-console location to the PATH environment variable to avoid having to quote the whole path in accessing it
+had to download "Microsoft Build Tools 2013" or running the reporting commands throws an error : http://stackoverflow.com/questions/24549921/msbuild-error-in-command-line-error-msb4067
+IMPORTANT: Follow this setup to run reporting tools from the command line: http://stackoverflow.com/questions/11363202/specflow-fails-when-trying-to-generate-test-execution-report
+IMPORTANT: Another change required if using Visual Studio 2015: https://github.com/techtalk/SpecFlow/issues/471
+Need to execute from command line?  http://www.marcusoft.net/2010/12/specflowexe-and-mstest.html
+Nice reporting templates: https://github.com/mvalipour/specflow-report-templates
+https://github.com/techtalk/SpecFlow/wiki/Reporting
+Specflow.exe is here: ..[project directory]\packages\SpecFlow.1.9.0\tools
+C:\Users\markwinspear\.nuget\packages\SpecFlow\1.9.0\tools
 
 TO READ:
 https://github.com/alisterscott/SpecDriver
@@ -40,8 +47,10 @@ https://github.com/mvalipour/specflow-report-templates (specflow - pretty report
 DECISIONS:
 Reshaper (JetBrains extension) - investigate
 xUnit/ nUnit / Specflow+ (Execution) - chosen NUnit for now
-Reporting??? 
+Reporting? 
+TFS integration for source control (currently git)
+Microsoft CI integration?
+Sauce labs integration
+Selenium Grid
 
-LESSONS:
-Ensure there is no ampersand in any local directories as it will cause a random parser error on build
-
+Lessons: Ensure no ampersand in any directory path as this will cause an XML parser error on test run
