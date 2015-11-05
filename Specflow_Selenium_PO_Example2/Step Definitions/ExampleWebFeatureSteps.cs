@@ -13,7 +13,7 @@ namespace Specflow_Selenium_PO_Example2.Step_Definitions
         public void GivenIHaveEnteredAndIntoTheApplication(string p0, string p1)
         {
             login = new LoginPage();
-            login.with("tomsmith", "SuperSecretPassword!");
+            login.with(p0, p1);
         }
 
 

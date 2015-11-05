@@ -5,6 +5,6 @@
 
 @web
 Scenario: Successful login
-	Given I have entered 'username' and 'password' into the application
+	Given I have entered 'tomsmith' and 'SuperSecretPassword!' into the application
 	When I login
 	Then I should be informed that login was successful
