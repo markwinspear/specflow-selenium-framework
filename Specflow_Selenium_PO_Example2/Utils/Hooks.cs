@@ -1,13 +1,13 @@
-﻿using System;
+﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.Remote;
+using System;
 using System.Collections.Generic;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Text;
 using TechTalk.SpecFlow;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Firefox;
-using OpenQA.Selenium.Remote;
-using System.IO;
-using System.Drawing.Imaging;
 
 namespace Specflow_Selenium_PO_Example2.Utils
 {
@@ -31,10 +31,10 @@ namespace Specflow_Selenium_PO_Example2.Utils
             if (ScenarioContext.Current.TestError != null)
             {
                 TakeScreenshot(driver);
-                driver.Quit();
+                
 
             }
-
+            driver.Quit();
         }
 
         private void TakeScreenshot(IWebDriver driver)

@@ -73,7 +73,7 @@ namespace Specflow_Selenium_PO_Example2.Features
 #line 7
 this.ScenarioSetup(scenarioInfo);
 #line 8
- testRunner.Given("I have entered \'tomsmith\' and \'SuperSecretPassword\' into the application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I have entered \'tomsmith\' and \'SuperSecretPassword!\' into the application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 9
  testRunner.When("I login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 10
@@ -94,11 +94,11 @@ this.ScenarioSetup(scenarioInfo);
 #line 13
 this.ScenarioSetup(scenarioInfo);
 #line 14
- testRunner.Given(string.Format("I have entered \"{0}\" and \"{1}\" into the application", username, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given(string.Format("I have entered {0} and {1} into the application", username, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 15
  testRunner.When("I login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 16
- testRunner.Then("I should be informed that login was not successful", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I should be informed that login was unsuccessful", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
