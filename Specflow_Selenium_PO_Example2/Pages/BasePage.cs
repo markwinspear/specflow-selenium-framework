@@ -54,6 +54,8 @@ namespace Specflow_Selenium_PO_Example2.Pages
             }
         }
 
+        
+
         public void submit(By locator)
         {
             find(locator).Submit();

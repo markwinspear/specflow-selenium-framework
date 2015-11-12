@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using NUnit.Framework;
+using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,10 +35,16 @@ namespace Specflow_Selenium_PO_Example2.Pages
             click(loginButton);
         }
 
-        public Boolean successMessagePresent()
+        public void successMessagePresent()
         {
-            return isDisplayed(successMessageLocator);
+            Assert.True(isDisplayed(successMessageLocator));
+        }
 
+        public void failureMessagePresent()
+        {
+            Assert.True(isDisplayed(failureMessageLocator));
+          //  return isDisplayed(failureMessageLocator);
+            
         }
     }
 }

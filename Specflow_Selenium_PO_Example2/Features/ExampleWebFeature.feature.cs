@@ -18,8 +18,8 @@ namespace Specflow_Selenium_PO_Example2.Features
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("ExampleWebFeature")]
+    [TechTalk.SpecRun.FeatureAttribute("ExampleWebFeature", Description="In order to create a basic example of automating a web applications\r\nAs a tester\r" +
+        "\nI want to be able to perform some automated tasks", SourceFile="Features\\ExampleWebFeature.feature", SourceLine=0)]
     public partial class ExampleWebFeatureFeature
     {
         
@@ -28,28 +28,27 @@ namespace Specflow_Selenium_PO_Example2.Features
 #line 1 "ExampleWebFeature.feature"
 #line hidden
         
-        [NUnit.Framework.TestFixtureSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "ExampleWebFeature", "In order to create a basic example of automating a web applications\nAs a tester\nI" +
-                    " want to be able to perform some automated tasks", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "ExampleWebFeature", "In order to create a basic example of automating a web applications\r\nAs a tester\r" +
+                    "\nI want to be able to perform some automated tasks", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.TestFixtureTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void ScenarioTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -65,9 +64,8 @@ namespace Specflow_Selenium_PO_Example2.Features
             testRunner.CollectScenarioErrors();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Successful login")]
-        [NUnit.Framework.CategoryAttribute("web")]
+        [TechTalk.SpecRun.ScenarioAttribute("Successful login", new string[] {
+                "web"}, SourceLine=6)]
         public virtual void SuccessfulLogin()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Successful login", new string[] {
@@ -75,13 +73,61 @@ namespace Specflow_Selenium_PO_Example2.Features
 #line 7
 this.ScenarioSetup(scenarioInfo);
 #line 8
- testRunner.Given("I have entered \'tomsmith\' and \'SuperSecretPassword!\' into the application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I have entered \'tomsmith\' and \'SuperSecretPassword\' into the application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 9
  testRunner.When("I login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 10
  testRunner.Then("I should be informed that login was successful", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
+        }
+        
+        public virtual void UnsuccessfulLogin(string testing, string username, string password, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "web"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Unsuccessful login", @__tags);
+#line 13
+this.ScenarioSetup(scenarioInfo);
+#line 14
+ testRunner.Given(string.Format("I have entered \"{0}\" and \"{1}\" into the application", username, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 15
+ testRunner.When("I login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 16
+ testRunner.Then("I should be informed that login was not successful", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Unsuccessful login, invalid combination 1", new string[] {
+                "web"}, SourceLine=19)]
+        public virtual void UnsuccessfulLogin_InvalidCombination1()
+        {
+            this.UnsuccessfulLogin("invalid combination 1", "test", "test", ((string[])(null)));
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Unsuccessful login, special characters", new string[] {
+                "web"}, SourceLine=20)]
+        public virtual void UnsuccessfulLogin_SpecialCharacters()
+        {
+            this.UnsuccessfulLogin("special characters", "$$$", "SuperSecretPassword!", ((string[])(null)));
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Unsuccessful login, this should fail - valid details", new string[] {
+                "web"}, SourceLine=21)]
+        public virtual void UnsuccessfulLogin_ThisShouldFail_ValidDetails()
+        {
+            this.UnsuccessfulLogin("this should fail - valid details", "tomsmith", "SuperSecretPassword!", ((string[])(null)));
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }
