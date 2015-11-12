@@ -35,6 +35,15 @@ Main resource used to create first tests: http://ralucasuditu-softwaretesting.bl
 	
 16. code to insert screenshots and page source html on failure: http://stackoverflow.com/questions/18512918/insert-screenshots-in-specrun-specflow-test-execution-reports
    (Note - these are not links - they are the path and filename... might need some tweaking of the standard specrun report template?)
+
+17. Install Pickles and Pickles Command Line via NuGet to generate human readable documentation.
+17b. Create bat file with contents...
+	cd /D [insert full path to location of solution file (.sln)]
+	.\packages\Pickles.CommandLine.2.0.0\tools\pickles.exe^
+	 --feature-directory=./Specflow_Selenium_PO_Example2\Features
+	 --output-directory=.\documentation^
+	 --test-results-format=specrun^
+	 --link-results-file=.\bin\Debug\TestResult.xml
    
 	
 Reporting - to be revisited:
