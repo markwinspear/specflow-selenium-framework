@@ -26,8 +26,17 @@ Main resource used to create first tests: http://ralucasuditu-softwaretesting.bl
 
 13. Follow these steps: http://ralucasuditu-softwaretesting.blogspot.co.uk/2015/06/write-your-first-test-with-specflow-and.html?m=1
 
-14. Add Hooks class - use tag @web for before and after scenarios involving webdriver
+14. Add Hooks class - use tag @web for before and after scenarios involving webdriver so only fires up for web tests
 
+15. Install SpecRun (NuGet) for enhanced reporting and IDE intellisense, formatting etc
+    As per http://tech.opentable.co.uk/blog/2013/06/07/getting-started-with-specrun/
+    Change Execution "stopAfterFailures" attribute to 0 else will retry tests three times, this 
+	   will also tell SpecRun not to stop after any failures and continue.
+	
+16. code to insert screenshots and page source html on failure: http://stackoverflow.com/questions/18512918/insert-screenshots-in-specrun-specflow-test-execution-reports
+   (Note - these are not links - they are the path and filename... might need some tweaking of the standard specrun report template?)
+   
+	
 Reporting - to be revisited:
 Add nunit-console location to the PATH environment variable to avoid having to quote the whole path in accessing it
 had to download "Microsoft Build Tools 2013" or running the reporting commands throws an error : http://stackoverflow.com/questions/24549921/msbuild-error-in-command-line-error-msb4067
@@ -46,11 +55,10 @@ https://github.com/mvalipour/specflow-report-templates (specflow - pretty report
 
 DECISIONS:
 Reshaper (JetBrains extension) - investigate
-xUnit/ nUnit / Specflow+ (Execution) - chosen NUnit for now
-Reporting? 
 TFS integration for source control (currently git)
 Microsoft CI integration?
-Sauce labs integration
+Sauce labs integration (possibly using Saucery?)
 Selenium Grid
+Why using NUnit 2 and not 3? (3 = parallel testing (although specflow handles this I believe)) - Saucery tests look cleaner using NUnit 3
 
-Lessons: Ensure no ampersand in any directory path as this will cause an XML parser error on test run
+
