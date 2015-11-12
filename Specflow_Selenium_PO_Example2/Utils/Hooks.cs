@@ -31,8 +31,6 @@ namespace Specflow_Selenium_PO_Example2.Utils
             if (ScenarioContext.Current.TestError != null)
             {
                 TakeScreenshot(driver);
-                
-
             }
             driver.Quit();
         }

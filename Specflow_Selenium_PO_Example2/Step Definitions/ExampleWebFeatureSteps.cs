@@ -9,32 +9,33 @@ namespace Specflow_Selenium_PO_Example2.Step_Definitions
     {
         LoginPage login;
 
-        [Given(@"I have entered '(.*)' and '(.*)' into the application")]
-        public void GivenIHaveEnteredAndIntoTheApplication(string p0, string p1)
+        [Given(@"I have entered username '(.*)' and password '(.*)'")]
+        public void GivenIHaveEnteredUsernameAndPassword(string p0, string p1)
         {
             login = new LoginPage();
             login.with(p0, p1);
         }
 
-
         [When(@"I login")]
         public void WhenILogin()
         {
-            // ScenarioContext.Current.Pending();
-            login.submit();            
-        }
-        
-        [Then(@"I should be informed that login was successful")]
-        public void ThenIShouldBeInformedThatLoginWasSuccessful()
-        {
-            login.successMessagePresent();
+            login.submit();
         }
 
-        [Then(@"I should be informed that login was unsuccessful")]
-        public void ThenIShouldBeInformedThatLoginWasUnsuccessful()
-        {
-            login.failureMessagePresent();
-        }
 
+        [Then(@"I should be informed that login '(.*)'")]
+        public void ThenIShouldBeInformedThatLogin(String p0)
+        {
+            switch (p0)
+            {
+                case "passed":
+                    login.successMessagePresent();
+                    break;
+                case "failed":
+                    login.failureMessagePresent();
+                    break;
+            }
+
+        }
     }
 }

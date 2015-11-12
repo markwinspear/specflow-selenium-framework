@@ -18,8 +18,9 @@ namespace Specflow_Selenium_PO_Example2.Features
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [TechTalk.SpecRun.FeatureAttribute("ExampleWebFeature", Description="In order to create a basic example of automating a web applications\r\nAs a tester\r" +
-        "\nI want to be able to perform some automated tasks", SourceFile="Features\\ExampleWebFeature.feature", SourceLine=0)]
+    [TechTalk.SpecRun.FeatureAttribute("ExampleWebFeature", new string[] {
+            "web"}, Description="In order to create a basic example of automating a web applications\r\nAs a tester\r" +
+        "\nI want to be able to perform some automated tasks", SourceFile="Features\\ExampleWebFeature.feature", SourceLine=1)]
     public partial class ExampleWebFeatureFeature
     {
         
@@ -33,7 +34,8 @@ namespace Specflow_Selenium_PO_Example2.Features
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "ExampleWebFeature", "In order to create a basic example of automating a web applications\r\nAs a tester\r" +
-                    "\nI want to be able to perform some automated tasks", ProgrammingLanguage.CSharp, ((string[])(null)));
+                    "\nI want to be able to perform some automated tasks", ProgrammingLanguage.CSharp, new string[] {
+                        "web"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -64,64 +66,37 @@ namespace Specflow_Selenium_PO_Example2.Features
             testRunner.CollectScenarioErrors();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Successful login", new string[] {
-                "web"}, SourceLine=6)]
-        public virtual void SuccessfulLogin()
+        public virtual void Login(string testing, string username, string password, string result, string[] exampleTags)
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Successful login", new string[] {
-                        "web"});
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Login", exampleTags);
 #line 7
 this.ScenarioSetup(scenarioInfo);
 #line 8
- testRunner.Given("I have entered \'tomsmith\' and \'SuperSecretPassword!\' into the application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given(string.Format("I have entered username \'{0}\' and password \'{1}\'", username, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 9
  testRunner.When("I login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 10
- testRunner.Then("I should be informed that login was successful", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("I should be informed that login \'{0}\'", result), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        public virtual void UnsuccessfulLogin(string testing, string username, string password, string[] exampleTags)
+        [TechTalk.SpecRun.ScenarioAttribute("Login, valid combination", SourceLine=13)]
+        public virtual void Login_ValidCombination()
         {
-            string[] @__tags = new string[] {
-                    "web"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Unsuccessful login", @__tags);
-#line 13
-this.ScenarioSetup(scenarioInfo);
-#line 14
- testRunner.Given(string.Format("I have entered {0} and {1} into the application", username, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 15
- testRunner.When("I login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 16
- testRunner.Then("I should be informed that login was unsuccessful", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
+            this.Login("valid combination", "tomsmith", "SuperSecretPassword!", "passed", ((string[])(null)));
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Unsuccessful login, invalid combination 1", new string[] {
-                "web"}, SourceLine=19)]
-        public virtual void UnsuccessfulLogin_InvalidCombination1()
+        [TechTalk.SpecRun.ScenarioAttribute("Login, invalid combination 1", SourceLine=14)]
+        public virtual void Login_InvalidCombination1()
         {
-            this.UnsuccessfulLogin("invalid combination 1", "test", "test", ((string[])(null)));
+            this.Login("invalid combination 1", "test", "test", "failed", ((string[])(null)));
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Unsuccessful login, special characters", new string[] {
-                "web"}, SourceLine=20)]
-        public virtual void UnsuccessfulLogin_SpecialCharacters()
+        [TechTalk.SpecRun.ScenarioAttribute("Login, special characters", SourceLine=15)]
+        public virtual void Login_SpecialCharacters()
         {
-            this.UnsuccessfulLogin("special characters", "$$$", "SuperSecretPassword!", ((string[])(null)));
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("Unsuccessful login, this should fail - valid details", new string[] {
-                "web"}, SourceLine=21)]
-        public virtual void UnsuccessfulLogin_ThisShouldFail_ValidDetails()
-        {
-            this.UnsuccessfulLogin("this should fail - valid details", "tomsmith", "SuperSecretPassword!", ((string[])(null)));
+            this.Login("special characters", "$$$", "SuperSecretPassword!", "failed", ((string[])(null)));
         }
         
         [TechTalk.SpecRun.TestRunCleanup()]
