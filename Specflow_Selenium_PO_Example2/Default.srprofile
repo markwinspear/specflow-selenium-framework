@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TestProfile xmlns="http://www.specrun.com/schemas/2011/09/TestProfile">
-  <Settings projectName="Specflow_Selenium_PO_Example2" projectId="{7d4c8fa4-4f8b-4f3a-b94c-e5d48c3d929e}" />
+  <Settings projectName="Specflow_Selenium_PO_Example2" projectId="{7d4c8fa4-4f8b-4f3a-b94c-e5d48c3d929e}"/>
   <Execution stopAfterFailures="0" testThreadCount="1" testSchedulingMode="Sequential" />
   <!-- For collecting by a SpecRun server update and enable the following element. For using the 
       collected statistics, set testSchedulingMode="Adaptive" attribute on the <Execution> element.

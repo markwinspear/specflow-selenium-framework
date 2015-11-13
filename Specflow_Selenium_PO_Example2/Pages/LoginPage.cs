@@ -18,8 +18,7 @@ namespace Specflow_Selenium_PO_Example2.Pages
         By failureMessageLocator = By.CssSelector(".flash.error");
 
 
-        public LoginPage()  {
-          
+        public LoginPage()  {    
         }
 
         public void with(String username, String password)
@@ -42,9 +41,7 @@ namespace Specflow_Selenium_PO_Example2.Pages
 
         public void failureMessagePresent()
         {
-            Assert.True(isDisplayed(failureMessageLocator));
-          //  return isDisplayed(failureMessageLocator);
-            
+            Assert.True(isDisplayed(failureMessageLocator));           
         }
     }
 }
