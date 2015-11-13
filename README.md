@@ -28,10 +28,12 @@ Main resource used to create first tests: http://ralucasuditu-softwaretesting.bl
 
 14. Add Hooks class - use tag @web for before and after scenarios involving webdriver so only fires up for web tests
 
-15. Install SpecRun (NuGet) for enhanced reporting and IDE intellisense, formatting etc
+15a. Install SpecRun (NuGet) for enhanced reporting and IDE intellisense, formatting etc
     As per http://tech.opentable.co.uk/blog/2013/06/07/getting-started-with-specrun/
     Change Execution "stopAfterFailures" attribute to 0 else will retry tests three times, this 
 	   will also tell SpecRun not to stop after any failures and continue.
+	   
+15b. Set multi-threaded using Specrun... 	in Default.srprofile, change Execution atribute testThreadCount="n"
 	
 16. code to insert screenshots and page source html on failure: http://stackoverflow.com/questions/18512918/insert-screenshots-in-specrun-specflow-test-execution-reports
    (Note - these are not links - they are the path and filename... might need some tweaking of the standard specrun report template?)
