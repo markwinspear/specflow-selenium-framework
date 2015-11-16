@@ -33,6 +33,7 @@ Main resource used to create first tests: http://ralucasuditu-softwaretesting.bl
 
 14. Add Hooks class - use tag @web for before and after scenarios involving webdriver so only fires up for web tests
 
+15: Reporting Option 1 (Specrun):
 15a. Install SpecRun (NuGet) for enhanced reporting and IDE intellisense, formatting etc
     As per http://tech.opentable.co.uk/blog/2013/06/07/getting-started-with-specrun/
     Change Execution "stopAfterFailures" attribute to 0 else will retry tests three times, this 
@@ -54,6 +55,8 @@ Main resource used to create first tests: http://ralucasuditu-softwaretesting.bl
 	 --test-results-format=specrun^
 	 --link-results-file=.\bin\Debug\TestResult.xml
 	 
+18: Reporting option 2 (Nunit and Reportunit):
+
 18A - Reporting using NUnit. Executing tests via Visual Studio does NOT create a test result file (you only get test stats within VS).
 	To get a test result file, execute via the Nunit console (http://www.specflow.org/documentation/Reporting/)
 	Open command line:
