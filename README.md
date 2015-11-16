@@ -40,7 +40,7 @@ Main resource used to create first tests: http://ralucasuditu-softwaretesting.bl
 	   will also tell SpecRun not to stop after any failures and continue.
 	   
 15b. Set multi-threaded using Specrun: 	in Default.srprofile, change Execution atribute testThreadCount="n"
-	
+
 16. code to insert screenshots and page source html on failure: http://stackoverflow.com/questions/18512918/insert-screenshots-in-specrun-specflow-test-execution-reports
    (Note - these are not links - they are the path and filename... might need some tweaking of the standard specrun report template?)
 
