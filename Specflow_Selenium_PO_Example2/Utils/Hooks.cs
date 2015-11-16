@@ -3,6 +3,7 @@ using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Remote;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
@@ -15,14 +16,15 @@ namespace Specflow_Selenium_PO_Example2.Utils
     public sealed class Hooks
     {
         IWebDriver driver;
-
+        
         // For additional details on SpecFlow hooks see http://go.specflow.org/doc-hooks
 
         [BeforeScenario("web")]
         public void BeforeWebScenario()
         {
-            driver = new FirefoxDriver();
-            ScenarioContext.Current["driver"] = driver;
+                driver = new FirefoxDriver();
+                ScenarioContext.Current["driver"] = driver;          
+
         }
 
         [AfterScenario("web")]

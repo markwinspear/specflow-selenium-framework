@@ -18,9 +18,9 @@ namespace Specflow_Selenium_PO_Example2.Features
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [TechTalk.SpecRun.FeatureAttribute("ExampleWebFeature", new string[] {
-            "web"}, Description="In order to create a basic example of automating a web applications\r\nAs a tester\r" +
-        "\nI want to be able to perform some automated tasks", SourceFile="Features\\ExampleWebFeature.feature", SourceLine=1)]
+    [NUnit.Framework.TestFixtureAttribute()]
+    [NUnit.Framework.DescriptionAttribute("ExampleWebFeature")]
+    [NUnit.Framework.CategoryAttribute("web")]
     public partial class ExampleWebFeatureFeature
     {
         
@@ -29,7 +29,7 @@ namespace Specflow_Selenium_PO_Example2.Features
 #line 1 "ExampleWebFeature.feature"
 #line hidden
         
-        [TechTalk.SpecRun.FeatureInitialize()]
+        [NUnit.Framework.TestFixtureSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,18 +39,19 @@ namespace Specflow_Selenium_PO_Example2.Features
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [TechTalk.SpecRun.FeatureCleanup()]
+        [NUnit.Framework.TestFixtureTearDownAttribute()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
+        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [TechTalk.SpecRun.ScenarioCleanup()]
+        [NUnit.Framework.TearDownAttribute()]
         public virtual void ScenarioTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -66,6 +67,11 @@ namespace Specflow_Selenium_PO_Example2.Features
             testRunner.CollectScenarioErrors();
         }
         
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Login")]
+        [NUnit.Framework.TestCaseAttribute("valid combination", "tomsmith", "SuperSecretPassword!", "passed", null)]
+        [NUnit.Framework.TestCaseAttribute("invalid combination 1", "test", "test", "failed", null)]
+        [NUnit.Framework.TestCaseAttribute("special characters", "$$$", "SuperSecretPassword!", "failed", null)]
         public virtual void Login(string testing, string username, string password, string result, string[] exampleTags)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Login", exampleTags);
@@ -79,30 +85,6 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.Then(string.Format("I should be informed that login \'{0}\'", result), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("Login, valid combination", SourceLine=13)]
-        public virtual void Login_ValidCombination()
-        {
-            this.Login("valid combination", "tomsmith", "SuperSecretPassword!", "passed", ((string[])(null)));
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("Login, invalid combination 1", SourceLine=14)]
-        public virtual void Login_InvalidCombination1()
-        {
-            this.Login("invalid combination 1", "test", "test", "failed", ((string[])(null)));
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("Login, special characters", SourceLine=15)]
-        public virtual void Login_SpecialCharacters()
-        {
-            this.Login("special characters", "$$$", "SuperSecretPassword!", "failed", ((string[])(null)));
-        }
-        
-        [TechTalk.SpecRun.TestRunCleanup()]
-        public virtual void TestRunCleanup()
-        {
-TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }
