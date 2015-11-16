@@ -7,7 +7,12 @@ Main resource used to create first tests: http://ralucasuditu-softwaretesting.bl
 3. Read http://ralucasuditu-softwaretesting.blogspot.co.uk/2015/06/write-your-first-test-with-specflow-and.html?m=1
 4. Connect to github (View > Team Explorer), publish to github then commit solution to github
 5. Create new Unit test project "SpecFlow Tests" Visual C# > Test > Unit Test Project https://my330space.wordpress.com/2015/02/18/how-to-setup-selenium-webdriver-with-visual-studio-2013/
-6. Use NuGet (Project > Manage NuGet packages) to install specflow (Specflow NUnit)
+6. Use NuGet (Project > Manage NuGet packages) to install specflow and Nunit:
+	NUnit 2.6.47
+	NUnit.Runners 
+	NUnitTestAdaptor
+	SpecFlow
+	Specflow.NUnit
 7. Use NuGet to install selenuium? http://nugetmusthaves.com/Tag/selenium
 8. Use NuGet to install selenium support package 
 9. Create folder 'dependencies'.  Download chrome, IE drivers directly here via NuGet packages (is this always the latest version?)
@@ -18,7 +23,7 @@ Main resource used to create first tests: http://ralucasuditu-softwaretesting.bl
 10. As part of the NuGet installs,  you will notice that an App.config file was generated in the structure of the project. 
     If we chosen to use MSTest instead of NUnit as a test runner, we need to do a configuration in this file.
 	Add line  <unitTestProvider name="MsTest.2015" />
-	For now, keep as nunit
+	For now, keep as nunit or specrun (if installed)
 
 11. Tools > Extensions and Updates > Online.  Install SpecFlow extension and restart VS
 
@@ -38,6 +43,8 @@ Main resource used to create first tests: http://ralucasuditu-softwaretesting.bl
 16. code to insert screenshots and page source html on failure: http://stackoverflow.com/questions/18512918/insert-screenshots-in-specrun-specflow-test-execution-reports
    (Note - these are not links - they are the path and filename... might need some tweaking of the standard specrun report template?)
 
+   SpecRun - to customise reports: https://groups.google.com/forum/#!topic/specrun/8-G0TgOBUbY
+
 17. Install Pickles and Pickles Command Line via NuGet to generate human readable documentation.
 17b. Create bat file with contents...
 	cd /D [insert full path to location of solution file (.sln)]
@@ -46,7 +53,26 @@ Main resource used to create first tests: http://ralucasuditu-softwaretesting.bl
 	 --output-directory=.\documentation^
 	 --test-results-format=specrun^
 	 --link-results-file=.\bin\Debug\TestResult.xml
-   
+	 
+18A - Reporting using NUnit. Executing tests via Visual Studio does NOT create a test result file (you only get test stats within VS).
+	To get a test result file, execute via the Nunit console (http://www.specflow.org/documentation/Reporting/)
+	Open command line:
+				cd /d to project directory  > packages > NUnit \NUnit.Runners.2.6.4\tools
+			    nunit-console.exe /labels /out=TestResult.txt /xml=TestResult.xml "[path to project file]\BookShop.AcceptanceTests.csproj"
+	
+				output seems to save here by default: E:\Google Drive\Documents\Cucumber_Selenium_CSharp\Specflow_Selenium_PO_Example2\packages\NUnit.Runners.2.6.4\tools
+
+18B. Using NUnit results to create interactive report with Reportunit
+	Install from http://reportunit.relevantcodes.com/ (or use NuGet then navigate to packages directory of project (using file explorer))
+	run from command line
+	reportunit "location of testResults.xml file" "location of output file"
+	
+Problems with 18... Nunit console outputs method names and arguments.  As 	Reportunit takes the output from NUnit console, 
+ this means we lose the G/W/T text that would be useful... Conclusion... Although using this method (18), we would be able to use Saucery for NUnit 
+ to execute tests in saucelabs, the reporting is not good enough.
+  
+	
+	
 	
 Reporting - to be revisited:
 Add nunit-console location to the PATH environment variable to avoid having to quote the whole path in accessing it
