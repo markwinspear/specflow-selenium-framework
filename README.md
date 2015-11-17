@@ -33,15 +33,13 @@ Main resource used to create first tests: http://ralucasuditu-softwaretesting.bl
 
 14. Add Hooks class - use tag @web for before and after scenarios involving webdriver so only fires up for web tests
 
-15: Reporting Option 1 (Specrun):
 15a. Install SpecRun (NuGet) for enhanced reporting and IDE intellisense, formatting etc
     As per http://tech.opentable.co.uk/blog/2013/06/07/getting-started-with-specrun/
     Change Execution "stopAfterFailures" attribute to 0 else will retry tests three times, this 
 	   will also tell SpecRun not to stop after any failures and continue.
 	   
-15b. Set multi-threaded using Specrun: 	in Default.srprofile, change Execution atribute testThreadCount="n"
-
-
+15b. Set multi-threaded using Specrun... 	in Default.srprofile, change Execution atribute testThreadCount="n"
+	
 16. code to insert screenshots and page source html on failure: http://stackoverflow.com/questions/18512918/insert-screenshots-in-specrun-specflow-test-execution-reports
    (Note - these are not links - they are the path and filename... might need some tweaking of the standard specrun report template?)
 
@@ -56,8 +54,6 @@ Main resource used to create first tests: http://ralucasuditu-softwaretesting.bl
 	 --test-results-format=specrun^
 	 --link-results-file=.\bin\Debug\TestResult.xml
 	 
-18: Reporting option 2 (Nunit and Reportunit):
-
 18A - Reporting using NUnit. Executing tests via Visual Studio does NOT create a test result file (you only get test stats within VS).
 	To get a test result file, execute via the Nunit console (http://www.specflow.org/documentation/Reporting/)
 	Open command line:
@@ -75,19 +71,33 @@ Problems with 18... Nunit console outputs method names and arguments.  As 	Repor
  this means we lose the G/W/T text that would be useful... Conclusion... Although using this method (18), we would be able to use Saucery for NUnit 
  to execute tests in saucelabs, the reporting is not good enough.
   
+19: Extending specflow report generation to use custom template from https://github.com/mvalipour/specflow-report-templates)
+  
+  a. Add ../Nunit.Runners.2.6.4/tools to PATH environment variable in order to be able to run tools and store files in the right locations
+  b. Add ../Specflow/tools to PATH environment variable
+  
+  Execute tests using NUnit console runner (to also generate the Xml results file)... setup a .bat file to do this with the following contents:
+  cd /d [project directory(which contains the bin folder)]^
+   nunit-console.exe /labels /out=TestResult.txt /xml=TestResult.xml bin\Debug\BookShop.AcceptanceTests.csproj
+
+  forked and cloned repo specflow-report-templates (https://github.com/mvalipour/specflow-report-templates)
+  set up bat file:
+  cd /d E:\"Google Drive"\Documents\Cucumber_Selenium_CSharp\Specflow_Selenium_PO_Example2\packages\SpecFlow.1.9.0\tools
+
+specflow nunitexecutionreport^
+ Specflow_Selenium_PO_Example2.csproj^
+ /out:"TestResult.html"^
+ /xsltFile:"E:\Google Drive\Documents\Cucumber_Selenium_CSharp\specflow-report-templates\nunit-dream\ExecutionReport.xslt"^
+ /xmlTestResult:"E:\Google Drive\Documents\Cucumber_Selenium_CSharp\Specflow_Selenium_PO_Example2\packages\NUnit.Runners.2.6.4\tools\TestResult.xml"
+pause
 	
-	
-	
+----
+
 Reporting - to be revisited:
-Add nunit-console location to the PATH environment variable to avoid having to quote the whole path in accessing it
-had to download "Microsoft Build Tools 2013" or running the reporting commands throws an error : http://stackoverflow.com/questions/24549921/msbuild-error-in-command-line-error-msb4067
 IMPORTANT: Follow this setup to run reporting tools from the command line: http://stackoverflow.com/questions/11363202/specflow-fails-when-trying-to-generate-test-execution-report
 IMPORTANT: Another change required if using Visual Studio 2015: https://github.com/techtalk/SpecFlow/issues/471
 Need to execute from command line?  http://www.marcusoft.net/2010/12/specflowexe-and-mstest.html
-Nice reporting templates: https://github.com/mvalipour/specflow-report-templates
-https://github.com/techtalk/SpecFlow/wiki/Reporting
-Specflow.exe is here: ..[project directory]\packages\SpecFlow.1.9.0\tools
-C:\Users\markwinspear\.nuget\packages\SpecFlow\1.9.0\tools
+Specflow.exe if installed via NuGet ends up here: ..[project directory]\packages\SpecFlow.1.9.0\tools
 
 TO READ:
 https://github.com/alisterscott/SpecDriver
