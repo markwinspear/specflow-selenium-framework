@@ -110,6 +110,7 @@
     <None Include="Default.srprofile">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Execute tests using NUnit console %28Step1%29.bat" />
     <None Include="Features\example.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>example.feature.cs</LastGenOutput>
@@ -121,6 +122,10 @@
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Run Specflow enhanced reporting %28Step 2%29 .bat" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TestResult.html" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
