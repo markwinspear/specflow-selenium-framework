@@ -64,17 +64,19 @@ Main resource used to create first tests: http://ralucasuditu-softwaretesting.bl
 
 18B. Using NUnit results to create interactive report with Reportunit
 	Install from http://reportunit.relevantcodes.com/ (or use NuGet then navigate to packages directory of project (using file explorer))
+	Add to PATH environment variable [project directory]\packages\ReportUnit.1.2.1\tools
+	restart command line or PATH changes won't be picked up
 	run from command line
-	reportunit "location of testResults.xml file" "location of output file"
+	reportunit "location of testResults.xml file (or filename if already in the folder)" "location of output file (or name of file if already in the folder you want)"
 	
-Problems with 18... Nunit console outputs method names and arguments.  As 	Reportunit takes the output from NUnit console, 
- this means we lose the G/W/T text that would be useful... Conclusion... Although using this method (18), we would be able to use Saucery for NUnit 
+Problems with 18... Reportunit loses the G/W/T text that would be useful... Conclusion... Although using this method (18), we would be able to use Saucery for NUnit 
  to execute tests in saucelabs, the reporting is not good enough.
   
 19: Extending specflow report generation to use custom template from https://github.com/mvalipour/specflow-report-templates)
   
   a. Add ../Nunit.Runners.2.6.4/tools to PATH environment variable in order to be able to run tools and store files in the right locations
   b. Add ../Specflow/tools to PATH environment variable
+  c. restart command line or PATH changes won't be picked up
   
   Execute tests using NUnit console runner (to also generate the Xml results file)... setup a .bat file to do this with the following contents:
   cd /d [project directory(which contains the bin folder)]^
@@ -91,6 +93,7 @@ specflow nunitexecutionreport^
  /xmlTestResult:"E:\Google Drive\Documents\Cucumber_Selenium_CSharp\Specflow_Selenium_PO_Example2\packages\NUnit.Runners.2.6.4\tools\TestResult.xml"
 pause
 	
+Evaulation of 19... This method means we get decent reporting (except Scenario Outlines) and can then use Saucery 	
 ----
 
 Reporting - to be revisited:
