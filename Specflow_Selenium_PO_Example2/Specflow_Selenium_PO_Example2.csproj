@@ -122,6 +122,7 @@
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="run pickles.bat" />
     <None Include="Run Specflow enhanced reporting %28Step 2%29 .bat" />
   </ItemGroup>
   <ItemGroup>
