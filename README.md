@@ -1,5 +1,5 @@
-# SpecFlow Framework 
-## Uses SpecFlow, WebDriver, NUnit, specflow-report-templates (for reporting) and utilises Page Object Model pattern
+# SpecFlow Selenium Framework 
+## Uses SpecFlow, Selenium (WebDriver), NUnit, specflow-report-templates (for reporting) and utilises Page Object Model pattern
 
 ## Background reading: 
 * Getting started with Specflow: http://ralucasuditu-softwaretesting.blogspot.co.uk/2015/06/write-your-first-test-with-specflow-and.html?m=1
