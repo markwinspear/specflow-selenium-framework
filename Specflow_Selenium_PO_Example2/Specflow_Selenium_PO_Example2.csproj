@@ -124,6 +124,7 @@
     </None>
     <None Include="run pickles.bat" />
     <None Include="Run Specflow enhanced reporting %28Step 2%29 .bat" />
+    <None Include="Test_Automation_Framework.vsdx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="TestResult.html" />
