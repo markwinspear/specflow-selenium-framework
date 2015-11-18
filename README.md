@@ -51,10 +51,9 @@
 ## Reporting
 + Standard NUnit reporting via Visual Studio is limited to that displayed in the Test explorer
 + To generate standard NUnit reports, you need to use NUnit console
- To get a test result file, execute via the Nunit console (http://www.specflow.org/documentation/Reporting/)
-Open command line:
-cd /d to project directory  > packages > NUnit \NUnit.Runners.2.6.4\tools
-nunit-console.exe /labels /out=TestResult.txt /xml=TestResult.xml "[path to project file]\BookShop.AcceptanceTests.csproj"
++ To generate a test results xml file, execute via the Nunit console (http://www.specflow.org/documentation/Reporting/)
++ Open command line and cd /d to project directory  > packages > NUnit \NUnit.Runners.2.6.4\tools
++ run command nunit-console.exe /labels /out=TestResult.txt /xml=TestResult.xml "[path to project file]\BookShop.AcceptanceTests.csproj"
 
 + Extending specflow report generation to use custom template from https://github.com/mvalipour/specflow-report-templates)
   
