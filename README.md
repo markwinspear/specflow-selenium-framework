@@ -66,9 +66,10 @@
   ```cd /d [project directory(which contains the bin folder)]^
    nunit-console.exe /labels /out=TestResult.txt /xml=TestResult.xml bin\Debug\BookShop.AcceptanceTests.csproj```
 
-++ Forked and cloned repo specflow-report-templates (https://github.com/mvalipour/specflow-report-templates)
-++ Set up bat file:
-  ```
+    Forked and cloned repo specflow-report-templates (https://github.com/mvalipour/specflow-report-templates)
+
+    Set up bat file:
+    ```
 cd /d E:\"Google Drive"\Documents\Cucumber_Selenium_CSharp\Specflow_Selenium_PO_Example2\packages\SpecFlow.1.9.0\tools  specflow nunitexecutionreport^  
  Specflow_Selenium_PO_Example2.csproj^  
  /out:"TestResult.html"^  
