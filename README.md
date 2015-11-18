@@ -1,12 +1,12 @@
 # SpecFlow Selenium Framework 
-### Uses:
-..* SpecFlow (BDD)
-..* Selenium (WebDriver)
-..* NUnit 2.x
-..* specflow-report-templates (for reporting) 
-..* pickles (documentation generator for features and scenarios)
-..* utilises Page Object Model pattern
-..* takes screenshots on failure of web tests
+### Uses:  
++ SpecFlow (BDD)
++ Selenium (WebDriver)
++ NUnit 2.x
++ specflow-report-templates (for reporting) 
++ pickles (documentation generator for features and scenarios)
++ utilises Page Object Model pattern
++ takes screenshots on failure of web tests
 
 ## Background reading: 
 * Getting started with Specflow: http://ralucasuditu-softwaretesting.blogspot.co.uk/2015/06/write-your-first-test-with-specflow-and.html?m=1
