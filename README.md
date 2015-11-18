@@ -45,8 +45,9 @@
 -- Change Execution "stopAfterFailures" attribute to 0 else will retry tests three times, this 
 -- will also tell SpecRun not to stop after any failures and continue.
 
-## Generate human-readable feature and scenario documentation
+## Generate human-readable feature and scenario documentation linked to test results
 + Install Pickles and Pickles Command Line via NuGet to generate human readable documentation.
++ Add location of pickles command line exe to the PATH environment variable
 + Create bat file with contents:  
 ```
 cd /D [insert full path to location of solution file (.sln)]  
@@ -54,7 +55,7 @@ cd /D [insert full path to location of solution file (.sln)]
  --feature-directory=./Specflow_Selenium_PO_Example2\Features^  
  --output-directory=.\documentation^  
  --test-results-format=specrun^  
- --link-results-file=.\bin\Debug\TestResult.xml
+ --link-results-file=.\[directory to TestResult.xml]\TestResult.xml
 ```
 
 ## Reporting
