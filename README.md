@@ -37,7 +37,7 @@
 -- Change Execution "stopAfterFailures" attribute to 0 else will retry tests three times, this 
 -- will also tell SpecRun not to stop after any failures and continue.
 
-## Generate human-readable feature and scenarios
+## Generate human-readable feature and scenario documentation
 + Install Pickles and Pickles Command Line via NuGet to generate human readable documentation.
 + Create bat file with contents...
 	cd /D [insert full path to location of solution file (.sln)]
@@ -58,16 +58,16 @@ nunit-console.exe /labels /out=TestResult.txt /xml=TestResult.xml "[path to proj
 
 + Extending specflow report generation to use custom template from https://github.com/mvalipour/specflow-report-templates)
   
-  a. Add ../Nunit.Runners.2.6.4/tools to PATH environment variable in order to be able to run tools and store files in the right locations
-  b. Add ../Specflow/tools to PATH environment variable
-  c. restart command line or PATH changes won't be picked up
+++ Add ../Nunit.Runners.2.6.4/tools to PATH environment variable in order to be able to run tools and store files in the right locations
+++ Add ../Specflow/tools to PATH environment variable
+++ restart command line or PATH changes won't be picked up
   
-  Execute tests using NUnit console runner (to also generate the Xml results file)... setup a .bat file to do this with the following contents:
+++ Execute tests using NUnit console runner (to also generate the Xml results file)... setup a .bat file to do this with the following contents:
   cd /d [project directory(which contains the bin folder)]^
    nunit-console.exe /labels /out=TestResult.txt /xml=TestResult.xml bin\Debug\BookShop.AcceptanceTests.csproj
 
-  forked and cloned repo specflow-report-templates (https://github.com/mvalipour/specflow-report-templates)
-  set up bat file:
+++ Forked and cloned repo specflow-report-templates (https://github.com/mvalipour/specflow-report-templates)
+++ Set up bat file:
   cd /d E:\"Google Drive"\Documents\Cucumber_Selenium_CSharp\Specflow_Selenium_PO_Example2\packages\SpecFlow.1.9.0\tools
 
 specflow nunitexecutionreport^
@@ -80,16 +80,16 @@ pause
 Evaulation of 19... This method means we get decent reporting (except Scenario Outlines) and can then use Saucery
 
 ## Notes:
-..* The Hooks class contains code which runs before and after scenarios (and can be expanded to use other annotations).The scenarios are tagged with "web" to ensure that webdriver instances are only created for UI tests.  Use the tag @web when creating scenarios
++ The Hooks class contains code which runs before and after scenarios (and can be expanded to use other annotations).The scenarios are tagged with "web" to ensure that webdriver instances are only created for UI tests.  Use the tag @web when creating scenarios
 
-..* Parallel execution. NUnit 2.x does not support parallelism, but Specrun does if you are using this as your test runner.  To set multi-threaded using Specrun, in Default.srprofile change Execution atribute testThreadCount="n"
++ Parallel execution. NUnit 2.x does not support parallelism, but Specrun does if you are using this as your test runner.  To set multi-threaded using Specrun, in Default.srprofile change Execution atribute testThreadCount="n"
 	
-..* The project contains code to insert screenshots and page source html on failure and is taken from here: http://stackoverflow.com/questions/18512918/insert-screenshots-in-specrun-specflow-test-execution-reports
++ The project contains code to insert screenshots and page source html on failure and is taken from here: http://stackoverflow.com/questions/18512918/insert-screenshots-in-specrun-specflow-test-execution-reports
    (Note - these are not links - they are the path and filename... might need some tweaking of the standard specrun report template?)
 
-..* NUnit is currently used as the test runner.  This is because integration with Saucelabs in the future (possibly using Saucery for NUnit) appears to be much more difficult using Specrun
++ NUnit is currently used as the test runner.  This is because integration with Saucelabs in the future (possibly using Saucery for NUnit) appears to be much more difficult using Specrun
 
-..* If using SpecRun as the test runner, to customise reports: https://groups.google.com/forum/#!topic/specrun/8-G0TgOBUbY
++ If using SpecRun as the test runner, to customise reports: https://groups.google.com/forum/#!topic/specrun/8-G0TgOBUbY
 
 
 	 
