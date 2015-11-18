@@ -66,17 +66,17 @@ cd /D [insert full path to location of solution file (.sln)]
 ```nunit-console.exe /labels /out=TestResult.txt /xml=TestResult.xml "[path to project file]\BookShop.AcceptanceTests.csproj"```
 
 + Extending specflow report generation to use custom template from https://github.com/mvalipour/specflow-report-templates)
-    Add ../Nunit.Runners.2.6.4/tools to PATH environment variable in order to be able to run tools and store files in the right locations
-    Add ../Specflow/tools to PATH environment variable
-    restart command line or PATH changes won't be picked up
+   * Add ../Nunit.Runners.2.6.4/tools to PATH environment variable in order to be able to run tools and store files in the right locations
+  * Add ../Specflow/tools to PATH environment variable
+  * Restart command line or PATH changes won't be picked up
   
-    Execute tests using NUnit console runner (to also generate the Xml results file)... setup a .bat file to do this with the following contents:
+  * Execute tests using NUnit console runner (to also generate the Xml results file)... setup a .bat file to do this with the following contents:
   ```cd /d [project directory(which contains the bin folder)]^
    nunit-console.exe /labels /out=TestResult.txt /xml=TestResult.xml bin\Debug\BookShop.AcceptanceTests.csproj```
 
-    Forked and cloned repo specflow-report-templates (https://github.com/mvalipour/specflow-report-templates)
+  * Forked and cloned repo specflow-report-templates (https://github.com/mvalipour/specflow-report-templates)
 
-    Set up bat file:
+  * Set up bat file:
     ```
 cd /d E:\"Google Drive"\Documents\Cucumber_Selenium_CSharp\Specflow_Selenium_PO_Example2\packages\SpecFlow.1.9.0\tools  specflow nunitexecutionreport^  
  Specflow_Selenium_PO_Example2.csproj^  
@@ -85,7 +85,7 @@ cd /d E:\"Google Drive"\Documents\Cucumber_Selenium_CSharp\Specflow_Selenium_PO_
  /xmlTestResult:"E:\Google Drive\Documents\Cucumber_Selenium_CSharp\Specflow_Selenium_PO_Example2\packages\NUnit.Runners.2.6.4\tools\TestResult.xml"  
 pause
 ```	
-Evaulation of 19... This method means we get decent reporting (except Scenario Outlines) and can then use Saucery
+Evaulation... This method means we get decent reporting (except Scenario Outlines) and can then use Saucery
 
 ## Notes:
 + The Hooks class contains code which runs before and after scenarios (and can be expanded to use other annotations).The scenarios are tagged with "web" to ensure that webdriver instances are only created for UI tests.  Use the tag @web when creating scenarios
