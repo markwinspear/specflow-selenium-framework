@@ -58,12 +58,11 @@
 ```nunit-console.exe /labels /out=TestResult.txt /xml=TestResult.xml "[path to project file]\BookShop.AcceptanceTests.csproj"```
 
 + Extending specflow report generation to use custom template from https://github.com/mvalipour/specflow-report-templates)
+    Add ../Nunit.Runners.2.6.4/tools to PATH environment variable in order to be able to run tools and store files in the right locations
+    Add ../Specflow/tools to PATH environment variable
+    restart command line or PATH changes won't be picked up
   
-..* Add ../Nunit.Runners.2.6.4/tools to PATH environment variable in order to be able to run tools and store files in the right locations
-++ Add ../Specflow/tools to PATH environment variable
-++ restart command line or PATH changes won't be picked up
-  
-++ Execute tests using NUnit console runner (to also generate the Xml results file)... setup a .bat file to do this with the following contents:
+    Execute tests using NUnit console runner (to also generate the Xml results file)... setup a .bat file to do this with the following contents:
   ```cd /d [project directory(which contains the bin folder)]^
    nunit-console.exe /labels /out=TestResult.txt /xml=TestResult.xml bin\Debug\BookShop.AcceptanceTests.csproj```
 
