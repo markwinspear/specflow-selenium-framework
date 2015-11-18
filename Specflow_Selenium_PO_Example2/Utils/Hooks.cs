@@ -22,7 +22,6 @@ namespace Specflow_Selenium_PO_Example2.Utils
         [BeforeScenario("web")]
         public void BeforeWebScenario()
         {
-
                 driver = new FirefoxDriver();
                 ScenarioContext.Current["driver"] = driver;          
 
