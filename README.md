@@ -45,8 +45,8 @@
  --feature-directory=./Specflow_Selenium_PO_Example2\Features
  --output-directory=.\documentation^
  --test-results-format=specrun^
- --link-results-file=.\bin\Debug\TestResult.xml
-```
+ --link-results-file=.\bin\Debug\TestResult.xml```
+
 
 ## Reporting
 + Standard NUnit reporting via Visual Studio is limited to that displayed in the Test explorer
