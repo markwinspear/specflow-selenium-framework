@@ -69,15 +69,14 @@
 
 ++ Forked and cloned repo specflow-report-templates (https://github.com/mvalipour/specflow-report-templates)
 ++ Set up bat file:
-  ```cd /d E:\"Google Drive"\Documents\Cucumber_Selenium_CSharp\Specflow_Selenium_PO_Example2\packages\SpecFlow.1.9.0\tools`
-
-specflow nunitexecutionreport^
- Specflow_Selenium_PO_Example2.csproj^
- /out:"TestResult.html"^
- /xsltFile:"E:\Google Drive\Documents\Cucumber_Selenium_CSharp\specflow-report-templates\nunit-dream\ExecutionReport.xslt"^
- /xmlTestResult:"E:\Google Drive\Documents\Cucumber_Selenium_CSharp\Specflow_Selenium_PO_Example2\packages\NUnit.Runners.2.6.4\tools\TestResult.xml"
-pause```
-	
+  ```
+cd /d E:\"Google Drive"\Documents\Cucumber_Selenium_CSharp\Specflow_Selenium_PO_Example2\packages\SpecFlow.1.9.0\tools  specflow nunitexecutionreport^  
+ Specflow_Selenium_PO_Example2.csproj^  
+ /out:"TestResult.html"^  
+ /xsltFile:"E:\Google Drive\Documents\Cucumber_Selenium_CSharp\specflow-report-templates\nunit-dream\ExecutionReport.xslt"^  
+ /xmlTestResult:"E:\Google Drive\Documents\Cucumber_Selenium_CSharp\Specflow_Selenium_PO_Example2\packages\NUnit.Runners.2.6.4\tools\TestResult.xml"  
+pause
+```	
 Evaulation of 19... This method means we get decent reporting (except Scenario Outlines) and can then use Saucery
 
 ## Notes:
