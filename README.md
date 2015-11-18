@@ -3,6 +3,7 @@
 
 ## Background reading: 
 * Getting started with Specflow: http://ralucasuditu-softwaretesting.blogspot.co.uk/2015/06/write-your-first-test-with-specflow-and.html?m=1
+* How the framework is organised and what is currently being considered for inclusion ![alt tag](https://github.com/markwinspear/specflow-selenium-framework/blob/master/Specflow_Selenium_PO_Example2/Test_Automation_Framework.vsdx)
 
 ##Getting started
 1. Install Visual Studio (Enterprise 2015)
