@@ -43,7 +43,7 @@
 ```cd /D [insert full path to location of solution file (.sln)]```
 ```
  .\packages\Pickles.CommandLine.2.0.0\tools\pickles.exe^  
- --feature-directory=./Specflow_Selenium_PO_Example2\Features  
+ --feature-directory=./Specflow_Selenium_PO_Example2\Features^  
  --output-directory=.\documentation^  
  --test-results-format=specrun^  
  --link-results-file=.\bin\Debug\TestResult.xml
@@ -54,11 +54,12 @@
 + To generate standard NUnit reports, you need to use NUnit console
 + To generate a test results xml file, execute via the Nunit console (http://www.specflow.org/documentation/Reporting/)
 + Open command line and cd /d to project directory  > packages > NUnit \NUnit.Runners.2.6.4\tools
-+ run command ```nunit-console.exe /labels /out=TestResult.txt /xml=TestResult.xml "[path to project file]\BookShop.AcceptanceTests.csproj"```
++ run command  
+```nunit-console.exe /labels /out=TestResult.txt /xml=TestResult.xml "[path to project file]\BookShop.AcceptanceTests.csproj"```
 
 + Extending specflow report generation to use custom template from https://github.com/mvalipour/specflow-report-templates)
   
-++ Add ../Nunit.Runners.2.6.4/tools to PATH environment variable in order to be able to run tools and store files in the right locations
+..* Add ../Nunit.Runners.2.6.4/tools to PATH environment variable in order to be able to run tools and store files in the right locations
 ++ Add ../Specflow/tools to PATH environment variable
 ++ restart command line or PATH changes won't be picked up
   
