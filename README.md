@@ -1,12 +1,8 @@
 # SpecFlow Framework 
-## Uses SpecFlow, WebDriver, NUnit, specflow-report-templates (for reporting)
-## Utilises Page Object Model pattern
+## Uses SpecFlow, WebDriver, NUnit, specflow-report-templates (for reporting) and utilises Page Object Model pattern
 
 ## Background reading: 
 * Getting started with Specflow: http://ralucasuditu-softwaretesting.blogspot.co.uk/2015/06/write-your-first-test-with-specflow-and.html?m=1
-
-## Stuff to organise
-* Create new Unit test project "SpecFlow Tests" Visual C# > Test > Unit Test Project https://my330space.wordpress.com/2015/02/18/how-to-setup-selenium-webdriver-with-visual-studio-2013/
 
 ##Getting started
 1. Install Visual Studio (Enterprise 2015)
@@ -42,8 +38,8 @@
 -- will also tell SpecRun not to stop after any failures and continue.
 
 ## Generate human-readable feature and scenarios
-..* Install Pickles and Pickles Command Line via NuGet to generate human readable documentation.
-..* Create bat file with contents...
++ Install Pickles and Pickles Command Line via NuGet to generate human readable documentation.
++ Create bat file with contents...
 	cd /D [insert full path to location of solution file (.sln)]
 	.\packages\Pickles.CommandLine.2.0.0\tools\pickles.exe^
 	 --feature-directory=./Specflow_Selenium_PO_Example2\Features
@@ -53,14 +49,14 @@
 
 
 ## Reporting
-..* Standard NUnit reporting via Visual Studio is limited to that displayed in the Test explorer
-..* To generate standard NUnit reports, you need to use NUnit console
++ Standard NUnit reporting via Visual Studio is limited to that displayed in the Test explorer
++ To generate standard NUnit reports, you need to use NUnit console
  To get a test result file, execute via the Nunit console (http://www.specflow.org/documentation/Reporting/)
 Open command line:
 cd /d to project directory  > packages > NUnit \NUnit.Runners.2.6.4\tools
 nunit-console.exe /labels /out=TestResult.txt /xml=TestResult.xml "[path to project file]\BookShop.AcceptanceTests.csproj"
 
-..* Extending specflow report generation to use custom template from https://github.com/mvalipour/specflow-report-templates)
++ Extending specflow report generation to use custom template from https://github.com/mvalipour/specflow-report-templates)
   
   a. Add ../Nunit.Runners.2.6.4/tools to PATH environment variable in order to be able to run tools and store files in the right locations
   b. Add ../Specflow/tools to PATH environment variable
