@@ -50,7 +50,7 @@
 + Create bat file with contents:  
 ```
 cd /D [insert full path to location of solution file (.sln)]  
-``` .\packages\Pickles.CommandLine.2.0.0\tools\pickles.exe^  
+ .\packages\Pickles.CommandLine.2.0.0\tools\pickles.exe^  
  --feature-directory=./Specflow_Selenium_PO_Example2\Features^  
  --output-directory=.\documentation^  
  --test-results-format=specrun^  
