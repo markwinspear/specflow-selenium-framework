@@ -48,9 +48,9 @@
 ## Generate human-readable feature and scenario documentation
 + Install Pickles and Pickles Command Line via NuGet to generate human readable documentation.
 + Create bat file with contents:  
-```cd /D [insert full path to location of solution file (.sln)]```
 ```
- .\packages\Pickles.CommandLine.2.0.0\tools\pickles.exe^  
+cd /D [insert full path to location of solution file (.sln)]  
+``` .\packages\Pickles.CommandLine.2.0.0\tools\pickles.exe^  
  --feature-directory=./Specflow_Selenium_PO_Example2\Features^  
  --output-directory=.\documentation^  
  --test-results-format=specrun^  
