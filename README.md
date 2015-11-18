@@ -17,17 +17,17 @@
 2. Install NuGet (package manager). http://docs.nuget.org/consume/package-manager-dialog#managing-packages-for-the-solution
 3. Connect to github project (View > Team Explorer)
 4. Use NuGet (Project > Manage NuGet packages) to install specflow and Nunit:
-..* NUnit 2.6.47
-..* NUnit.Runners 
-..* NUnitTestAdaptor
-..* SpecFlow
-..* Specflow.NUnit
+  * NUnit 2.6.47
+  * NUnit.Runners 
+  * NUnitTestAdaptor
+  * SpecFlow
+  * Specflow.NUnit
 5. Use NuGet to install Selenuium http://nugetmusthaves.com/Tag/selenium
 6. Use NuGet to install Selenium support package 
 7. Create folder 'dependencies'.  Download chrome, IE, Edge drivers directly here via NuGet packages 
--- Right click on the chromedriver.exe and select Properties
--- Ensure the Build Action Content is selected  Copy to Output Directory Copy Always has been selected. 
--- This will ensure that chromedriver.exe is always in the folder of the running assembly so it can be used.
+  * Right click on the chromedriver.exe and select Properties
+  * Ensure the Build Action Content is selected  Copy to Output Directory Copy Always has been selected. 
+  * This will ensure that chromedriver.exe is always in the folder of the running assembly so it can be used.
 
 8. As part of the NuGet installs,  you will notice that an App.config file was generated in the structure of the project. 
 -- If we chosen to use MSTest instead of NUnit as a test runner, we need to update this file.
