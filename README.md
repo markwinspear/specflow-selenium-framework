@@ -41,10 +41,15 @@
 + Install Pickles and Pickles Command Line via NuGet to generate human readable documentation.
 + Create bat file with contents...
 ```cd /D [insert full path to location of solution file (.sln)]
-.\packages\Pickles.CommandLine.2.0.0\tools\pickles.exe^
- --feature-directory=./Specflow_Selenium_PO_Example2\Features
+
+ .\packages\Pickles.CommandLine.2.0.0\tools\pickles.exe^
+ 
+--feature-directory=./Specflow_Selenium_PO_Example2\Features
+
  --output-directory=.\documentation^
+
  --test-results-format=specrun^
+
  --link-results-file=.\bin\Debug\TestResult.xml```
 
 
@@ -53,7 +58,7 @@
 + To generate standard NUnit reports, you need to use NUnit console
 + To generate a test results xml file, execute via the Nunit console (http://www.specflow.org/documentation/Reporting/)
 + Open command line and cd /d to project directory  > packages > NUnit \NUnit.Runners.2.6.4\tools
-+ run command nunit-console.exe /labels /out=TestResult.txt /xml=TestResult.xml "[path to project file]\BookShop.AcceptanceTests.csproj"
++ run command ```nunit-console.exe /labels /out=TestResult.txt /xml=TestResult.xml "[path to project file]\BookShop.AcceptanceTests.csproj"```
 
 + Extending specflow report generation to use custom template from https://github.com/mvalipour/specflow-report-templates)
   
@@ -62,19 +67,19 @@
 ++ restart command line or PATH changes won't be picked up
   
 ++ Execute tests using NUnit console runner (to also generate the Xml results file)... setup a .bat file to do this with the following contents:
-  cd /d [project directory(which contains the bin folder)]^
-   nunit-console.exe /labels /out=TestResult.txt /xml=TestResult.xml bin\Debug\BookShop.AcceptanceTests.csproj
+  ```cd /d [project directory(which contains the bin folder)]^
+   nunit-console.exe /labels /out=TestResult.txt /xml=TestResult.xml bin\Debug\BookShop.AcceptanceTests.csproj```
 
 ++ Forked and cloned repo specflow-report-templates (https://github.com/mvalipour/specflow-report-templates)
 ++ Set up bat file:
-  cd /d E:\"Google Drive"\Documents\Cucumber_Selenium_CSharp\Specflow_Selenium_PO_Example2\packages\SpecFlow.1.9.0\tools
+  ```cd /d E:\"Google Drive"\Documents\Cucumber_Selenium_CSharp\Specflow_Selenium_PO_Example2\packages\SpecFlow.1.9.0\tools`
 
 specflow nunitexecutionreport^
  Specflow_Selenium_PO_Example2.csproj^
  /out:"TestResult.html"^
  /xsltFile:"E:\Google Drive\Documents\Cucumber_Selenium_CSharp\specflow-report-templates\nunit-dream\ExecutionReport.xslt"^
  /xmlTestResult:"E:\Google Drive\Documents\Cucumber_Selenium_CSharp\Specflow_Selenium_PO_Example2\packages\NUnit.Runners.2.6.4\tools\TestResult.xml"
-pause
+pause```
 	
 Evaulation of 19... This method means we get decent reporting (except Scenario Outlines) and can then use Saucery
 
