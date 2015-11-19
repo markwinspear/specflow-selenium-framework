@@ -16,14 +16,15 @@
 1. Install Visual Studio (Enterprise 2015)
 2. Install NuGet (package manager). http://docs.nuget.org/consume/package-manager-dialog#managing-packages-for-the-solution
 3. Connect to github project (View > Team Explorer)
-4. Use NuGet (Project > Manage NuGet packages) to install specflow and Nunit:
+4. Use NuGet (Project > Manage NuGet packages) to install Specflow, Nunit and Selenium:
   * NUnit 2.6.47
   * NUnit.Runners 
   * NUnitTestAdaptor
   * SpecFlow
   * Specflow.NUnit
-5. Use NuGet to install Selenuium http://nugetmusthaves.com/Tag/selenium
-6. Use NuGet to install Selenium support package 
+  * Selenuium http://nugetmusthaves.com/Tag/selenium
+  * Selenium support package 
+  
 7. Create folder 'dependencies'.  Download chrome, IE, Edge drivers directly here via NuGet packages 
   * Right click on the chromedriver.exe and select Properties
   * Ensure the Build Action Content is selected  Copy to Output Directory Copy Always has been selected. 
