@@ -92,7 +92,7 @@ Evaulation... This method means we get decent reporting (except Scenario Outline
 ## Notes:
 + The Hooks class contains code which runs before and after scenarios (and can be expanded to use other annotations).The scenarios are tagged with "web" to ensure that webdriver instances are only created for UI tests.  Use the tag @web when creating scenarios
 
-+ Parallel execution. NUnit 2.x does not support parallelism, but Specrun does if you are using this as your test runner.  To set multi-threaded using Specrun, in Default.srprofile change Execution atribute testThreadCount="n"
++ Parallel execution. NUnit 2.x does not support parallelism, but Specrun does if you are using this as your test runner.  To set multi-threaded using Specrun, in Default.srprofile change Execution atribute testThreadCount="n".  It is possible to use the Sauce plugin for Jenkins to execute tests in parallel on multiple browsers and OS specified in the job configuration
 	
 + The project contains code to insert screenshots and page source html on failure and is taken from here: http://stackoverflow.com/questions/18512918/insert-screenshots-in-specrun-specflow-test-execution-reports
    (Note - these are not links - they are the path and filename... might need some tweaking of the standard specrun report template?)
